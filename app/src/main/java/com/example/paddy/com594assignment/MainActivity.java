@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, signUp.class);
         startActivity(intent);
     }
-
+//
     protected void onDestroy() {
         super.onDestroy();
         loginDataBaseAdapter.close();
