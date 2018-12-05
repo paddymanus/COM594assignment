@@ -52,52 +52,25 @@
         app:layout_constraintStart_toStartOf="@+id/editText_ca_cpword"
         app:layout_constraintTop_toBottomOf="@+id/editText_ca_cpword" />
 
-    <RadioButton
-        android:id="@+id/radioButton_male"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="14dp"
-        android:text="@string/rbtn_male"
-        app:layout_constraintBottom_toTopOf="@+id/radioButton_female"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView_gender" />
-
-    <RadioButton
-        android:id="@+id/radioButton_female"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="73dp"
-        android:text="@string/rbtn_female"
-        app:layout_constraintStart_toStartOf="@+id/radioButton_male"
-        app:layout_constraintTop_toBottomOf="@+id/editText_ca_email" />
-
-    <TextView
-        android:id="@+id/textView_gender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/txt_gender"
-        app:layout_constraintEnd_toStartOf="@+id/radioButton_male"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_ca_email" />
 
     <Button
         android:id="@+id/button_ca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="44dp"
+        android:onClick="signUp_OK"
         android:text="@string/btn_ca"
         app:layout_constraintStart_toStartOf="@+id/textView_ca"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton_female" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_ca_email" />
+
 
     <TextView
         android:id="@+id/textView_ca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="37dp"
+        android:onClick="alreadySignedUp"
         android:text="@string/txtView_ca_alreadyRegistered"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

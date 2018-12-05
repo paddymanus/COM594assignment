@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="36dp"
-        android:onClick="loginOK"
+        android:onClick="signIn"
         android:text="@string/btn_login"
         app:layout_constraintStart_toStartOf="@+id/textView_signup"
         app:layout_constraintTop_toBottomOf="@+id/editText_password" />
@@ -57,6 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="39dp"
+        android:onClick="signUp"
         android:text="@string/txtView_signup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
