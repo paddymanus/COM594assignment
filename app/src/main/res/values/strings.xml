@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">COM594assignment</string>
+    <string name="txt_welcome">Welcome</string>
+    <string name="txt_username">Username</string>
+    <string name="txt_password">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="txtView_signup">Are you new? Sign up now</string>
+    <string name="txt_ca_username">Username</string>
+    <string name="txt_ca_password">Password</string>
+    <string name="txt_ca_cpassword">Confirm Password</string>
+    <string name="txt_ca_email">Email</string>
+    <string name="btn_ca">Create Account</string>
+    <string name="txtView_ca_alreadyRegistered">Already registered? Go here to login</string>
+    <string name="txt_gender">Gender</string>
+    <string name="rbtn_male">Male</string>
+    <string name="rbtn_female">Female</string>
+    <string name="title_activity_maps">Map</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

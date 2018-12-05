@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".signUp"
+    tools:layout_editor_absoluteY="81dp">
+
+    <EditText
+        android:id="@+id/editText_ca_uname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="58dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/txt_ca_username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText_ca_pword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/txt_ca_password"
+        app:layout_constraintStart_toStartOf="@+id/editText_ca_uname"
+        app:layout_constraintTop_toBottomOf="@+id/editText_ca_uname" />
+
+    <EditText
+        android:id="@+id/editText_ca_cpword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/txt_ca_cpassword"
+        app:layout_constraintStart_toStartOf="@+id/editText_ca_pword"
+        app:layout_constraintTop_toBottomOf="@+id/editText_ca_pword" />
+
+    <EditText
+        android:id="@+id/editText_ca_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/txt_ca_email"
+        app:layout_constraintStart_toStartOf="@+id/editText_ca_cpword"
+        app:layout_constraintTop_toBottomOf="@+id/editText_ca_cpword" />
+
+    <RadioButton
+        android:id="@+id/radioButton_male"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp"
+        android:text="@string/rbtn_male"
+        app:layout_constraintBottom_toTopOf="@+id/radioButton_female"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView_gender" />
+
+    <RadioButton
+        android:id="@+id/radioButton_female"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="73dp"
+        android:text="@string/rbtn_female"
+        app:layout_constraintStart_toStartOf="@+id/radioButton_male"
+        app:layout_constraintTop_toBottomOf="@+id/editText_ca_email" />
+
+    <TextView
+        android:id="@+id/textView_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/txt_gender"
+        app:layout_constraintEnd_toStartOf="@+id/radioButton_male"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_ca_email" />
+
+    <Button
+        android:id="@+id/button_ca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/btn_ca"
+        app:layout_constraintStart_toStartOf="@+id/textView_ca"
+        app:layout_constraintTop_toBottomOf="@+id/radioButton_female" />
+
+    <TextView
+        android:id="@+id/textView_ca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="37dp"
+        android:text="@string/txtView_ca_alreadyRegistered"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_ca" />
+
+</android.support.constraint.ConstraintLayout>
