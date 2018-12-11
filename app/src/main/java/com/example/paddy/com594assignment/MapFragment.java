@@ -20,6 +20,8 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+
+
 public class MapFragment extends Fragment {
 
     public MapFragment() {
@@ -73,6 +75,8 @@ public class MapFragment extends Fragment {
 
 
         return rootView;
+
+
     }
 
     private BitmapDescriptor bitmapDescriptorFromVector(Context context, int vectorResId) {
