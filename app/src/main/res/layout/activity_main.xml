@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#b6dced"
     tools:context=".MainActivity"
     tools:layout_editor_absoluteY="81dp">
 
@@ -22,10 +23,10 @@
         android:id="@+id/editText_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="32dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/txt_username"
+        android:hint="@string/txt_username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_welcome" />
@@ -36,8 +37,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/txt_password"
+        android:inputType="textPassword"
+        android:hint="@string/txt_password"
         app:layout_constraintStart_toStartOf="@+id/editText_username"
         app:layout_constraintTop_toBottomOf="@+id/editText_username" />
 
@@ -46,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="24dp"
         android:onClick="signIn"
         android:text="@string/btn_login"
         app:layout_constraintStart_toStartOf="@+id/textView_signup"
@@ -56,7 +57,7 @@
         android:id="@+id/textView_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="39dp"
+        android:layout_marginTop="24dp"
         android:onClick="signUp"
         android:text="@string/txtView_signup"
         app:layout_constraintEnd_toEndOf="parent"

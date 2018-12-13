@@ -38,6 +38,7 @@
         <activity android:name=".signUp"></activity>
         <activity android:name=".mapWeather"></activity>
 
+
     </application>
 
     <uses-feature

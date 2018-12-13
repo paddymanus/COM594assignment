@@ -1,10 +1,13 @@
 package com.example.paddy.com594assignment;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +42,7 @@ public class WeatherFragment extends Fragment {
     TextView location;
     TextView pressure;
     TextView humidity;
+    ImageView weatherIcon;
 
 
     public WeatherFragment() {
@@ -59,9 +63,10 @@ public class WeatherFragment extends Fragment {
         temperature = view.findViewById(R.id.textView_temp);
         windSpeed = view.findViewById(R.id.textView_windSpeed);
         summary = view.findViewById(R.id.textView_summary);
-        location = view.findViewById(R.id.textView_location);
         pressure = view.findViewById(R.id.textView_pressure);
         humidity = view.findViewById(R.id.textView_humidity);
+        weatherIcon = view.findViewById(R.id.imageView_weatherPicture);
+        summary = view.findViewById(R.id.textView_summary);
         String latitude = getArguments().getString("latitude");
         String longitude = getArguments().getString("longitude");
         LatLng latLng = new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude));
@@ -113,7 +118,7 @@ public class WeatherFragment extends Fragment {
             String windSpeed = "UNDEFINED";
             String humidity = "UNDEFINED";
             String location = "UNDEFINED";
-           // String summary = "UNDEFINED";
+            String summary = "UNDEFINED";
 
 
             try {
@@ -132,6 +137,7 @@ public class WeatherFragment extends Fragment {
                 JSONObject topLevel = new JSONObject(builder.toString());
                 JSONObject main = topLevel.getJSONObject("main");
                 JSONObject wind = topLevel.getJSONObject("wind");
+                JSONArray weatherArray = topLevel.getJSONArray("weather");
                 temperature = String.valueOf(main.getDouble("temp"));
                 windSpeed = String.valueOf(wind.getDouble("speed"));
                 humidity = String.valueOf(main.getDouble("humidity"));
@@ -139,6 +145,14 @@ public class WeatherFragment extends Fragment {
                 weatherDetails.put("windSpeed", windSpeed);
                 weatherDetails.put("humidity", humidity);
                 weatherDetails.put("pressure", String.valueOf(main.getDouble("pressure")));
+                JSONObject weather = new JSONObject();
+                for (int i = 0; i < weatherArray.length(); i++) {
+                    weather = weatherArray.getJSONObject(i);
+                }
+                summary = String.valueOf(weather.getString("main"));
+                weatherDetails.put("summary", summary);
+                weatherDetails.put("description", String.valueOf(weather.getString("description")));
+                weatherDetails.put("icon", String.valueOf(weather.getString("icon")));
 
 
 
@@ -159,7 +173,43 @@ public class WeatherFragment extends Fragment {
             windSpeed.setText("Wind speed: " + weatherDetails.get("windSpeed") + " m/s");
             pressure.setText("Pressure: " + weatherDetails.get("pressure") + " hPa");
             humidity.setText("Humidity: " + weatherDetails.get("humidity") + "%");
+            summary.setText(weatherDetails.get("summary"));
+            String iconExt = weatherDetails.get("icon");
+            String url = "http://openweathermap.org/img/w/" + iconExt + ".png";
+            new DownloadImageTask((ImageView) getView().findViewById(R.id.imageView_weatherPicture))
+                    .execute(url);
 
         }
     }
+    private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+        ImageView bmImage;
+
+        public DownloadImageTask(ImageView bmImage) {
+            this.bmImage = bmImage;
+        }
+
+        @Override
+        protected Bitmap doInBackground(String... urls) {
+            String urldisplay = urls[0];
+            Bitmap mIcon11 = null;
+            try {
+                InputStream in = new java.net.URL(urldisplay).openStream();
+                mIcon11 = BitmapFactory.decodeStream(in);
+            } catch (Exception e) {
+                Log.e("Error", e.getMessage());
+                e.printStackTrace();
+            }
+            return mIcon11;
+        }
+
+        @Override
+        protected void onPostExecute(Bitmap result) {
+            bmImage.setImageBitmap(result);
+        }
+    }
+
 }
+
+
+
+

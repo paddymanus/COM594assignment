@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#b6dced"
     tools:context=".signUp"
     tools:layout_editor_absoluteY="81dp">
 
@@ -14,7 +15,7 @@
         android:layout_marginTop="58dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/txt_ca_username"
+        android:hint="@string/txt_ca_username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,8 +26,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="21dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/txt_ca_password"
+        android:inputType="textPassword"
+        android:hint="@string/txt_ca_password"
         app:layout_constraintStart_toStartOf="@+id/editText_ca_uname"
         app:layout_constraintTop_toBottomOf="@+id/editText_ca_uname" />
 
@@ -36,8 +37,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="17dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/txt_ca_cpassword"
+        android:inputType="textPassword"
+        android:hint="@string/txt_ca_cpassword"
         app:layout_constraintStart_toStartOf="@+id/editText_ca_pword"
         app:layout_constraintTop_toBottomOf="@+id/editText_ca_pword" />
 
@@ -47,8 +48,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/txt_ca_email"
+        android:inputType="textEmailAddress"
+        android:hint="@string/txt_ca_email"
         app:layout_constraintStart_toStartOf="@+id/editText_ca_cpword"
         app:layout_constraintTop_toBottomOf="@+id/editText_ca_cpword" />
 
