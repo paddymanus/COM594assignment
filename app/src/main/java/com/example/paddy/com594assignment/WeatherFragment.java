@@ -39,7 +39,6 @@ public class WeatherFragment extends Fragment {
     TextView temperature;
     TextView summary;
     TextView windSpeed;
-    TextView location;
     TextView pressure;
     TextView humidity;
     ImageView weatherIcon;
@@ -74,18 +73,6 @@ public class WeatherFragment extends Fragment {
         return view;
     }
 
-
- /**   @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    } */
-
     @Override
     public void onDetach() {
         super.onDetach();
@@ -117,7 +104,6 @@ public class WeatherFragment extends Fragment {
             String temperature = "UNDEFINED";
             String windSpeed = "UNDEFINED";
             String humidity = "UNDEFINED";
-            String location = "UNDEFINED";
             String summary = "UNDEFINED";
 
 

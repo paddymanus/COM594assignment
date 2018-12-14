@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#b6dced"
+    android:background="#1856ba"
     tools:context=".MainActivity"
     tools:layout_editor_absoluteY="81dp">
 
@@ -15,6 +15,7 @@
         android:layout_marginTop="57dp"
         android:text="@string/txt_welcome"
         android:textSize="36sp"
+        android:textColor="#fff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,6 +28,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="@string/txt_username"
+        android:textColorHint="#fff"
+        android:textColor="#fff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_welcome" />
@@ -39,6 +42,8 @@
         android:ems="10"
         android:inputType="textPassword"
         android:hint="@string/txt_password"
+        android:textColorHint="#fff"
+        android:textColor="#fff"
         app:layout_constraintStart_toStartOf="@+id/editText_username"
         app:layout_constraintTop_toBottomOf="@+id/editText_username" />
 
@@ -60,6 +65,7 @@
         android:layout_marginTop="24dp"
         android:onClick="signUp"
         android:text="@string/txtView_signup"
+        android:textColor="#fff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_login" />

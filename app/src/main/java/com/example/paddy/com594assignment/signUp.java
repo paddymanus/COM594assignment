@@ -3,6 +3,7 @@ package com.example.paddy.com594assignment;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -28,18 +29,24 @@ public class signUp extends AppCompatActivity {
         String email = ((EditText) findViewById(R.id.editText_ca_email)).getText().toString();
 
         if (userName.equals("") || password.equals("") || confirmPassword.equals("") || email.equals("")) {
-            Toast.makeText(signUp.this, "Fill All Fields", Toast.LENGTH_LONG).show();
+            Toast toast = Toast.makeText(signUp.this, "Fill All Fields", Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
             return;
         }
         //Check if both password matches
         if (!password.equals(confirmPassword)) {
-            Toast.makeText(getApplicationContext(), "Password does not match", Toast.LENGTH_LONG).show();
+            Toast toast = Toast.makeText(getApplicationContext(), "Password does not match", Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
             return;
         } else {
             //Save the data in database
             loginDataBaseAdapter.insertEntry(userName, password);
-            Toast.makeText(getApplicationContext(),
-                    "Your account has been successfully created. You can sign in now", Toast.LENGTH_LONG).show();
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "Your account has been successfully created. You can sign in now", Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
             Intent intent = new Intent(signUp.this, MainActivity.class);
             startActivity(intent);
         }

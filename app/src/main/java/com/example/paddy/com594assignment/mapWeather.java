@@ -15,6 +15,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -36,8 +37,7 @@ import com.google.android.gms.location.places.ui.PlaceSelectionListener;
 import com.google.android.gms.maps.model.LatLng;
 
 public class mapWeather extends AppCompatActivity
-        implements SOFragment.OnFragmentInteractionListener, SOQuestionFragment.OnFragmentInteractionListener,
-        SensorEventListener {
+        implements SensorEventListener {
 
     //    private Button btn1, btn2;
 //    private int PLACE_AUTOCOMPLETE_REQUEST_CODE = 1;
@@ -90,7 +90,9 @@ public class mapWeather extends AppCompatActivity
         }
 
         if(!isNetworkAvailable()){
-            Toast.makeText(getApplicationContext(), "NO NETWORK CONNECTION", Toast.LENGTH_LONG).show();
+            Toast toast = Toast.makeText(getApplicationContext(), "NO NETWORK CONNECTION", Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
         }
     }
 
@@ -119,10 +121,6 @@ public class mapWeather extends AppCompatActivity
         }
     }
 
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-
-    }
 
     public void addFragment1(Fragment fragment, boolean addToBackStack, String tag) {
         FragmentManager manager = getSupportFragmentManager();
@@ -203,7 +201,9 @@ public class mapWeather extends AppCompatActivity
                 return;
             }
             lastUpdateTime = currentTime;
-            Toast.makeText(this, "Device was shaken", Toast.LENGTH_LONG).show();
+            Toast toast = Toast.makeText(this, "Device was shaken - you have now logged out", Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
             Intent intent = new Intent(mapWeather.this, MainActivity.class);
             startActivity(intent);
 //            Fragment fragment = new SOFragment();

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#b6dced"
+    android:background="#1856ba"
     tools:context=".signUp"
     tools:layout_editor_absoluteY="81dp">
 
@@ -16,6 +16,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="@string/txt_ca_username"
+        android:textColor="#fff"
+        android:textColorHint="#fff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,6 +30,8 @@
         android:ems="10"
         android:inputType="textPassword"
         android:hint="@string/txt_ca_password"
+        android:textColor="#fff"
+        android:textColorHint="#fff"
         app:layout_constraintStart_toStartOf="@+id/editText_ca_uname"
         app:layout_constraintTop_toBottomOf="@+id/editText_ca_uname" />
 
@@ -39,6 +43,8 @@
         android:ems="10"
         android:inputType="textPassword"
         android:hint="@string/txt_ca_cpassword"
+        android:textColor="#fff"
+        android:textColorHint="#fff"
         app:layout_constraintStart_toStartOf="@+id/editText_ca_pword"
         app:layout_constraintTop_toBottomOf="@+id/editText_ca_pword" />
 
@@ -50,6 +56,8 @@
         android:ems="10"
         android:inputType="textEmailAddress"
         android:hint="@string/txt_ca_email"
+        android:textColor="#fff"
+        android:textColorHint="#fff"
         app:layout_constraintStart_toStartOf="@+id/editText_ca_cpword"
         app:layout_constraintTop_toBottomOf="@+id/editText_ca_cpword" />
 
@@ -73,6 +81,7 @@
         android:layout_marginTop="37dp"
         android:onClick="alreadySignedUp"
         android:text="@string/txtView_ca_alreadyRegistered"
+        android:textColor="#fff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_ca" />
